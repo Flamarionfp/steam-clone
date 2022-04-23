@@ -15,6 +15,7 @@ export const Button: React.FC<ButtonProps> = (props) => {
       fontSize="xs"
       fontWeight="normal"
       leftIcon={leftIcon}
+      _focus={{}}
     >
       {displayName}
     </ChakraButton>

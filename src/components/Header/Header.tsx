@@ -1,11 +1,17 @@
 import React from 'react';
-import { Box, HStack, Text, Link, Divider, Menu, MenuButton, MenuList, MenuItem, Flex } from '@chakra-ui/react';
+import { Box, HStack, Text, Link, Divider, Menu, MenuButton, MenuList, MenuItem, Flex, Image as ChakraImage } from '@chakra-ui/react';
 import { HeaderProps } from './Header.types';
 import { Button } from '../Button'
 import { DownloadIcon } from '@chakra-ui/icons'
+import Image from 'next/image'
+import { useStorybook } from '../../hooks/useStorybook'
+import SteamLogo from '../../../public/images/logo_steam.svg'
 
 export const Header: React.FC<HeaderProps> = (props) => {
   // const { isAuthenticated } = props;
+  const { isRunningInStorybook } = useStorybook();
+
+  console.log("🚀 ~ file: Header.tsx ~ line 12 ~ isRunningInStorybook", isRunningInStorybook)
 
   return (
     <Box bg="darkGray.500" h="26" pt="2">
@@ -28,6 +34,21 @@ export const Header: React.FC<HeaderProps> = (props) => {
           </MenuList>
         </Menu>
       </HStack>
-    </Box>
+      <Flex maxW="800px" justify="center">
+        {isRunningInStorybook ? (
+          <ChakraImage
+            src={SteamLogo}
+            w="50"
+            h="10"
+          />
+        ) : (
+          <Image
+            src="/images/logo_steam.svg"
+            width={200}
+            height={40}
+          />
+        )}
+      </Flex>
+    </Box >
   );
 }

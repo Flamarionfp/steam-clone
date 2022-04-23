@@ -22,9 +22,7 @@ module.exports = {
         ...config.resolve,
         alias: {
           ...config.resolve.alias,
-          '@emotion/core': '@emotion/react',
-          'emotion-theming': '@emotion/react',
-          '@libs': path.resolve(__dirname, '..', 'src'),
+          '@': path.resolve(__dirname, '..', 'src'),
         },
       },
     };
