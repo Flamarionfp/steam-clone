@@ -19,6 +19,6 @@ NotAuthenticated.args = {
 };
 
 Authenticated.args = {
-  isAuthenticated: false,
+  isAuthenticated: true,
   isLogoVisible: true,
 };

@@ -6,6 +6,9 @@ export const colors = {
   green: {
     500: '#5C7E10',
   },
+  lightGray: {
+    500: '#616A72',
+  },
   darkGray: {
     500: '#171A21',
   }

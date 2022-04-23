@@ -8,7 +8,7 @@ import { useStorybook } from '../../hooks/useStorybook'
 import SteamLogo from '../../../public/images/logo_steam.svg'
 
 export const Header: React.FC<HeaderProps> = (props) => {
-  // const { isAuthenticated } = props;
+  const { isAuthenticated } = props;
   const { isRunningInStorybook } = useStorybook();
 
   console.log("🚀 ~ file: Header.tsx ~ line 12 ~ isRunningInStorybook", isRunningInStorybook)
@@ -16,7 +16,12 @@ export const Header: React.FC<HeaderProps> = (props) => {
   return (
     <Box bg="darkGray.500" h="26" pt="2">
       <HStack justify="flex-end" maxW="80%">
-        <Button onClick={() => null} displayName="Instale o Steam" leftIcon={<DownloadIcon />} />
+        <Button
+          onClick={() => null}
+          displayName="Instale o Steam"
+          leftIcon={<DownloadIcon />}
+          bg={isAuthenticated ? 'lightGray.500' : 'green.500'}
+        />
         <Link color="#F0FBFF" fontSize="xs" fontWeight="thin" _hover={{}}>
           iniciar sessão
         </Link>

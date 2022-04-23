@@ -7,7 +7,6 @@ export const Button: React.FC<ButtonProps> = (props) => {
 
   return (
     <ChakraButton
-      onClick={onClick}
       bg="green.500"
       color="white"
       borderRadius="1px"
@@ -16,6 +15,8 @@ export const Button: React.FC<ButtonProps> = (props) => {
       fontWeight="normal"
       leftIcon={leftIcon}
       _focus={{}}
+      {...props}
+      onClick={onClick}
     >
       {displayName}
     </ChakraButton>
