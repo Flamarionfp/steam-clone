@@ -7,7 +7,7 @@ import { Image } from '../Image/Image'
 import SteamLogo from '../../../public/images/logo_steam.svg'
 
 export const Header: React.FC<HeaderProps> = (props) => {
-  const { isAuthenticated } = props;
+  const { isAuthenticated, isLogoVisible } = props;
 
   return (
     <Box bg="darkGray.500" h="26" pt="2">
@@ -36,12 +36,14 @@ export const Header: React.FC<HeaderProps> = (props) => {
         </Menu>
       </HStack>
       <Flex maxW="800px" justify="center">
-        <Image
-          src={SteamLogo}
-          alt="Logo da Steam"
-          w={50}
-          h={10}
-        />
+        {isLogoVisible && (
+          <Image
+            src={SteamLogo}
+            alt="Logo da Steam"
+            w={50}
+            h={10}
+          />
+        )}
       </Flex>
     </Box >
   );
