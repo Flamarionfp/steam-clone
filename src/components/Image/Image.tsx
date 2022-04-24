@@ -4,6 +4,7 @@ import * as NextImage from 'next/image';
 import { ImageProps } from './Image.types';
 import { useStorybook } from '../../hooks/useStorybook'
 import { sizes } from '../../theme/sizes'
+import { calcRemToPx, convertRemStringToNumber } from '../../helpers/sizes'
 
 export const Image: React.FC<ImageProps> = (props) => {
   const { src, alt, w, h } = props;
@@ -21,16 +22,6 @@ export const Image: React.FC<ImageProps> = (props) => {
     const { width, height } = values;
 
     return { width: calcRemToPx(width), height: calcRemToPx(height) }
-  }
-
-  function calcRemToPx(rem: number) {
-    const root = 16
-    return rem * root
-  }
-
-  function convertRemStringToNumber(rem: string): number {
-    const formatedString = rem.replace('rem', '');
-    return Number(formatedString);
   }
 
   const { width, height } = getImageSize(w, h);
