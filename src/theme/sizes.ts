@@ -1,4 +1,4 @@
-export const sizes = {
+export const sizes: { [key: number]: string } = {
   0.5: '0.125rem', //2px
   1: '0.25rem', //4px
   1.5: '0.375rem', //6px

@@ -3,8 +3,8 @@ import { Box, HStack, Text, Link, Divider, Menu, MenuButton, MenuList, MenuItem,
 import { HeaderProps } from './Header.types';
 import { Button } from '../Button'
 import { DownloadIcon } from '@chakra-ui/icons'
-import Image from 'next/image'
 import { useStorybook } from '../../hooks/useStorybook'
+import { Image } from '../Image/Image'
 import SteamLogo from '../../../public/images/logo_steam.svg'
 
 export const Header: React.FC<HeaderProps> = (props) => {
@@ -40,19 +40,11 @@ export const Header: React.FC<HeaderProps> = (props) => {
         </Menu>
       </HStack>
       <Flex maxW="800px" justify="center">
-        {isRunningInStorybook ? (
-          <ChakraImage
-            src={SteamLogo}
-            w="50"
-            h="10"
-          />
-        ) : (
-          <Image
-            src="/images/logo_steam.svg"
-            width={200}
-            height={40}
-          />
-        )}
+        <Image
+          src={SteamLogo}
+          w={50}
+          h={10}
+        />
       </Flex>
     </Box >
   );
